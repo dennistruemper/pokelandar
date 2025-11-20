@@ -80,6 +80,62 @@ export const loadSessionByCode = query('unchecked', async (code: unknown) => {
 });
 
 /**
+ * Validates a Pokemon code format
+ */
+export const validatePokemonCode = query('unchecked', async (code: unknown) => {
+	if (typeof code !== 'string') {
+		return false;
+	}
+	return isValidPokemonCode(code);
+});
+
+/**
+ * Creates a new session with a specific Pokemon code
+ */
+export const createSessionWithCode = query('unchecked', async (code: unknown) => {
+	if (typeof code !== 'string' || !isValidPokemonCode(code)) {
+		return null;
+	}
+
+	try {
+		const db = await connectToDatabase();
+		const collection = db.collection<Session>('sessions');
+
+		// Check if code already exists
+		const existing = await collection.findOne({ code });
+		if (existing) {
+			// Return existing session
+			return {
+				sessionId: existing._id?.toString(),
+				code: existing.code,
+				completedDays: existing.completedDays,
+				lastCompletedDay: existing.lastCompletedDay
+			};
+		}
+
+		// Create new session with the provided code
+		const now = new Date();
+		const session: Session = {
+			code,
+			completedDays: [],
+			lastCompletedDay: 0,
+			createdAt: now,
+			updatedAt: now
+		};
+
+		const result = await collection.insertOne(session);
+
+		return {
+			sessionId: result.insertedId.toString(),
+			code: code
+		};
+	} catch (error) {
+		console.error('Error creating session with code:', error);
+		return null;
+	}
+});
+
+/**
  * Marks a day as completed for a session
  */
 export const completeDay = query('unchecked', async (params: unknown) => {

@@ -2,7 +2,12 @@
 	import { goto } from '$app/navigation';
 	import { sessionStore } from '$lib/stores/session';
 	import type { PageData } from './$types';
-	import { canAccessDay, loadSessionByCode } from './session.remote';
+	import {
+		canAccessDay,
+		createSessionWithCode,
+		loadSessionByCode,
+		validatePokemonCode
+	} from './session.remote';
 
 	let { data }: { data: PageData } = $props();
 
@@ -35,16 +40,39 @@
 
 	async function handleCodeSubmit() {
 		codeError = null;
-		if (!codeInput.trim()) return;
+		const trimmedCode = codeInput.trim();
+		if (!trimmedCode) return;
 
-		const session = await loadSessionByCode(codeInput.trim());
+		// First validate the code format
+		const isValid = await validatePokemonCode(trimmedCode);
+		if (!isValid) {
+			codeError = 'Ungültiger Code. Bitte überprüfe deine Eingabe.';
+			return;
+		}
+
+		// Try to load existing session
+		let session = await loadSessionByCode(trimmedCode);
+
+		// If no session exists but code is valid, create a new one
+		if (!session) {
+			const newSession = await createSessionWithCode(trimmedCode);
+			if (newSession) {
+				session = {
+					sessionId: newSession.sessionId,
+					code: newSession.code,
+					completedDays: [],
+					lastCompletedDay: 0
+				};
+			}
+		}
+
 		if (session) {
 			sessionStore.setCode(session.code);
 			sessionStore.updateProgress(session.completedDays, session.lastCompletedDay);
 			showCodeInput = false;
 			codeInput = '';
 		} else {
-			codeError = 'Ungültiger Code. Bitte überprüfe deine Eingabe.';
+			codeError = 'Fehler beim Erstellen der Session. Bitte versuche es erneut.';
 		}
 	}
 
