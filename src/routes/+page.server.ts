@@ -1,8 +1,6 @@
+import { CALENDAR_START_DATE } from '$lib/constants';
 import { connectToDatabase } from '$lib/server/db';
 import type { Question } from '$lib/types/question';
-
-// Calendar start date: December 1, 2025
-const CALENDAR_START_DATE = new Date('2025-12-01T00:00:00Z');
 
 export async function load() {
 	try {

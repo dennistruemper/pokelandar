@@ -1,10 +1,8 @@
 import { query } from '$app/server';
+import { CALENDAR_START_DATE } from '$lib/constants';
 import { connectToDatabase } from '$lib/server/db';
 import { generatePokemonCode, isValidPokemonCode } from '$lib/server/pokemon-codes';
 import type { Session } from '$lib/types/session';
-
-// Calendar start date: December 1, 2025
-const CALENDAR_START_DATE = new Date('2025-12-01T00:00:00Z');
 
 /**
  * Creates a new session with a Pokemon code

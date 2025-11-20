@@ -2,9 +2,7 @@ import { query } from '$app/server';
 import { connectToDatabase } from '$lib/server/db';
 import type { Question } from '$lib/types/question';
 import { error } from '@sveltejs/kit';
-
-// Calendar start date: December 1, 2025
-const CALENDAR_START_DATE = new Date('2025-12-01T00:00:00Z');
+import { CALENDAR_START_DATE } from '$lib/constants';
 
 export const getDaysWithQuestions = query(async () => {
 	try {
