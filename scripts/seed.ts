@@ -13,7 +13,7 @@ const sampleQuestions: SeedQuestion[] = [
 		_id: 'starter-bisasam',
 		question: 'Wie heißt das Pflanzen-Pokémon, das Professor Eich einem Trainer am Anfang schenkt?',
 		answer: 'Bisasam',
-		reward: 'Richtig! Bisasam ist der Pflanzen-Starter!',
+		reward: 'Richtig! Bisasam ist der Pflanzen-Starter! Bauschritte: 1-37',
 		day: 1,
 		createdAt: new Date(),
 		updatedAt: new Date()
@@ -22,7 +22,7 @@ const sampleQuestions: SeedQuestion[] = [
 		_id: 'starter-glumanda',
 		question: 'Wie heißt das Feuer-Pokémon, das Professor Eich einem Trainer am Anfang schenkt?',
 		answer: 'Glumanda',
-		reward: 'Korrekt! Glumanda ist der Feuer-Starter!',
+		reward: 'Korrekt! Glumanda ist der Feuer-Starter! Bauschritte: 1-37',
 		day: 1,
 		createdAt: new Date(),
 		updatedAt: new Date()
@@ -31,7 +31,7 @@ const sampleQuestions: SeedQuestion[] = [
 		_id: 'starter-schiggy',
 		question: 'Wie heißt das Wasser-Pokémon, das Professor Eich einem Trainer am Anfang schenkt?',
 		answer: 'Schiggy',
-		reward: 'Genau! Schiggy ist der Wasser-Starter!',
+		reward: 'Genau! Schiggy ist der Wasser-Starter! Bauschritte: 1-37',
 		day: 1,
 		createdAt: new Date(),
 		updatedAt: new Date()
@@ -41,7 +41,7 @@ const sampleQuestions: SeedQuestion[] = [
 		_id: 'evolution-bisaknosp',
 		question: 'In welches Pokémon entwickelt sich Bisasam auf Level 16?',
 		answer: 'Bisaknosp',
-		reward: 'Stimmt! Bisasam wird zu Bisaknosp!',
+		reward: 'Stimmt! Bisasam wird zu Bisaknosp! Bauschritte: 38-76',
 		day: 2,
 		createdAt: new Date(),
 		updatedAt: new Date()
@@ -50,7 +50,7 @@ const sampleQuestions: SeedQuestion[] = [
 		_id: 'evolution-glutexo',
 		question: 'In welches Pokémon entwickelt sich Glumanda auf Level 16?',
 		answer: 'Glutexo',
-		reward: 'Richtig! Glumanda wird zu Glutexo!',
+		reward: 'Richtig! Glumanda wird zu Glutexo! Bauschritte: 38-76',
 		day: 2,
 		createdAt: new Date(),
 		updatedAt: new Date()
@@ -59,7 +59,7 @@ const sampleQuestions: SeedQuestion[] = [
 		_id: 'evolution-schillok',
 		question: 'In welches Pokémon entwickelt sich Schiggy auf Level 16?',
 		answer: 'Schillok',
-		reward: 'Korrekt! Schiggy wird zu Schillok!',
+		reward: 'Korrekt! Schiggy wird zu Schillok! Bauschritte: 38-76',
 		day: 2,
 		createdAt: new Date(),
 		updatedAt: new Date()
@@ -69,7 +69,7 @@ const sampleQuestions: SeedQuestion[] = [
 		_id: 'evolution-bisaflor',
 		question: 'In welches Pokémon entwickelt sich Bisaknosp auf Level 32?',
 		answer: 'Bisaflor',
-		reward: 'Perfekt! Bisaknosp wird zu Bisaflor!',
+		reward: 'Perfekt! Bisaknosp wird zu Bisaflor! Bauschritte: 77-115',
 		day: 3,
 		createdAt: new Date(),
 		updatedAt: new Date()
@@ -78,7 +78,7 @@ const sampleQuestions: SeedQuestion[] = [
 		_id: 'evolution-glurak',
 		question: 'In welches Pokémon entwickelt sich Glutexo auf Level 36?',
 		answer: 'Glurak',
-		reward: 'Genau! Glutexo wird zu Glurak!',
+		reward: 'Genau! Glutexo wird zu Glurak! Bauschritte: 77-115',
 		day: 3,
 		createdAt: new Date(),
 		updatedAt: new Date()
@@ -87,7 +87,7 @@ const sampleQuestions: SeedQuestion[] = [
 		_id: 'evolution-turtok',
 		question: 'In welches Pokémon entwickelt sich Schillok auf Level 36?',
 		answer: 'Turtok',
-		reward: 'Richtig! Schillok wird zu Turtok!',
+		reward: 'Richtig! Schillok wird zu Turtok! Bauschritte: 77-115',
 		day: 3,
 		createdAt: new Date(),
 		updatedAt: new Date()
@@ -97,7 +97,7 @@ const sampleQuestions: SeedQuestion[] = [
 		_id: 'pikachu-type',
 		question: 'Welchen Typ hat Pikachu?',
 		answer: 'Elektro',
-		reward: 'Korrekt! Pikachu ist ein Elektro-Pokémon!',
+		reward: 'Korrekt! Pikachu ist ein Elektro-Pokémon! Bauschritte: 116-152',
 		day: 4,
 		createdAt: new Date(),
 		updatedAt: new Date()
@@ -106,7 +106,7 @@ const sampleQuestions: SeedQuestion[] = [
 		_id: 'pikachu-evolution',
 		question: 'In welches Pokémon entwickelt sich Pikachu mit einem Donnerstein?',
 		answer: 'Raichu',
-		reward: 'Richtig! Pikachu wird mit Donnerstein zu Raichu!',
+		reward: 'Richtig! Pikachu wird mit Donnerstein zu Raichu! Bauschritte: 116-152',
 		day: 4,
 		createdAt: new Date(),
 		updatedAt: new Date()
@@ -115,7 +115,7 @@ const sampleQuestions: SeedQuestion[] = [
 		_id: 'pikachu-trainer',
 		question: 'Wie heißt Ashes Pikachu in der deutschen Anime-Serie?',
 		answer: 'Pikachu',
-		reward: 'Genau! Ashes Pikachu heißt einfach Pikachu!',
+		reward: 'Genau! Ashes Pikachu heißt einfach Pikachu! Bauschritte: 116-152',
 		day: 4,
 		createdAt: new Date(),
 		updatedAt: new Date()
@@ -125,7 +125,7 @@ const sampleQuestions: SeedQuestion[] = [
 		_id: 'legendary-arktos',
 		question: 'Wie heißt das legendäre Eis-Flug-Pokémon in der ersten Generation?',
 		answer: 'Arktos',
-		reward: 'Korrekt! Arktos ist der legendäre Eis-Vogel!',
+		reward: 'Korrekt! Arktos ist der legendäre Eis-Vogel! Bauschritte: 153-195',
 		day: 5,
 		createdAt: new Date(),
 		updatedAt: new Date()
@@ -134,7 +134,7 @@ const sampleQuestions: SeedQuestion[] = [
 		_id: 'legendary-zapdos',
 		question: 'Wie heißt das legendäre Elektro-Flug-Pokémon in der ersten Generation?',
 		answer: 'Zapdos',
-		reward: 'Richtig! Zapdos ist der legendäre Elektro-Vogel!',
+		reward: 'Richtig! Zapdos ist der legendäre Elektro-Vogel! Bauschritte: 153-195',
 		day: 5,
 		createdAt: new Date(),
 		updatedAt: new Date()
@@ -143,7 +143,7 @@ const sampleQuestions: SeedQuestion[] = [
 		_id: 'legendary-lavados',
 		question: 'Wie heißt das legendäre Feuer-Flug-Pokémon in der ersten Generation?',
 		answer: 'Lavados',
-		reward: 'Genau! Lavados ist der legendäre Feuer-Vogel!',
+		reward: 'Genau! Lavados ist der legendäre Feuer-Vogel! Bauschritte: 153-195',
 		day: 5,
 		createdAt: new Date(),
 		updatedAt: new Date()
@@ -153,7 +153,7 @@ const sampleQuestions: SeedQuestion[] = [
 		_id: 'mew-number',
 		question: 'Welche Nummer hat Mew im Pokédex der ersten Generation?',
 		answer: '151',
-		reward: 'Korrekt! Mew ist Pokémon Nummer 151!',
+		reward: 'Korrekt! Mew ist Pokémon Nummer 151! Bauschritte: 196-237',
 		day: 6,
 		createdAt: new Date(),
 		updatedAt: new Date()
@@ -162,7 +162,7 @@ const sampleQuestions: SeedQuestion[] = [
 		_id: 'mewtu-number',
 		question: 'Welche Nummer hat Mewtu im Pokédex der ersten Generation?',
 		answer: '150',
-		reward: 'Richtig! Mewtu ist Pokémon Nummer 150!',
+		reward: 'Richtig! Mewtu ist Pokémon Nummer 150! Bauschritte: 196-237',
 		day: 6,
 		createdAt: new Date(),
 		updatedAt: new Date()
@@ -171,7 +171,7 @@ const sampleQuestions: SeedQuestion[] = [
 		_id: 'mewtu-creation',
 		question: 'Aus welchem Pokémon wurde Mewtu von Wissenschaftlern erschaffen?',
 		answer: 'Mew',
-		reward: 'Genau! Mewtu wurde aus Mews DNA erschaffen!',
+		reward: 'Genau! Mewtu wurde aus Mews DNA erschaffen! Bauschritte: 196-237',
 		day: 6,
 		createdAt: new Date(),
 		updatedAt: new Date()
@@ -181,7 +181,7 @@ const sampleQuestions: SeedQuestion[] = [
 		_id: 'trade-kadabra',
 		question: 'In welches Pokémon entwickelt sich Kadabra beim Tausch?',
 		answer: 'Simsala',
-		reward: 'Korrekt! Kadabra wird beim Tausch zu Simsala!',
+		reward: 'Korrekt! Kadabra wird beim Tausch zu Simsala! Bauschritte: 238-269',
 		day: 7,
 		createdAt: new Date(),
 		updatedAt: new Date()
@@ -190,7 +190,7 @@ const sampleQuestions: SeedQuestion[] = [
 		_id: 'trade-machollo',
 		question: 'In welches Pokémon entwickelt sich Maschock beim Tausch?',
 		answer: 'Machomei',
-		reward: 'Richtig! Maschock wird beim Tausch zu Machomei!',
+		reward: 'Richtig! Maschock wird beim Tausch zu Machomei! Bauschritte: 238-269',
 		day: 7,
 		createdAt: new Date(),
 		updatedAt: new Date()
@@ -199,7 +199,7 @@ const sampleQuestions: SeedQuestion[] = [
 		_id: 'trade-georok',
 		question: 'In welches Pokémon entwickelt sich Georok beim Tausch?',
 		answer: 'Geowaz',
-		reward: 'Genau! Georok wird beim Tausch zu Geowaz!',
+		reward: 'Genau! Georok wird beim Tausch zu Geowaz! Bauschritte: 238-269',
 		day: 7,
 		createdAt: new Date(),
 		updatedAt: new Date()
@@ -210,7 +210,7 @@ const sampleQuestions: SeedQuestion[] = [
 		question:
 			'In welche drei Pokémon kann sich Evoli mit Steinen entwickeln? (Alphabetische Reihenfolge)',
 		answer: 'Aquana Blitza Flamara',
-		reward: 'Perfekt! Evoli kann zu Aquana, Blitza oder Flamara werden!',
+		reward: 'Perfekt! Evoli kann zu Aquana, Blitza oder Flamara werden! Bauschritte: 270-305',
 		day: 8,
 		createdAt: new Date(),
 		updatedAt: new Date()
@@ -219,7 +219,7 @@ const sampleQuestions: SeedQuestion[] = [
 		_id: 'stone-vulpix',
 		question: 'In welches Pokémon entwickelt sich Vulpix mit einem Feuerstein?',
 		answer: 'Vulnona',
-		reward: 'Korrekt! Vulpix wird mit Feuerstein zu Vulnona!',
+		reward: 'Korrekt! Vulpix wird mit Feuerstein zu Vulnona! Bauschritte: 270-305',
 		day: 8,
 		createdAt: new Date(),
 		updatedAt: new Date()
@@ -228,7 +228,7 @@ const sampleQuestions: SeedQuestion[] = [
 		_id: 'stone-piepi',
 		question: 'In welches Pokémon entwickelt sich Piepi mit einem Mondstein?',
 		answer: 'Pixi',
-		reward: 'Richtig! Piepi wird mit Mondstein zu Pixi!',
+		reward: 'Richtig! Piepi wird mit Mondstein zu Pixi! Bauschritte: 270-305',
 		day: 8,
 		createdAt: new Date(),
 		updatedAt: new Date()
@@ -238,7 +238,7 @@ const sampleQuestions: SeedQuestion[] = [
 		_id: 'bug-raupy',
 		question: 'Wie heißt das Käfer-Pokémon, das sich zu Safcon entwickelt?',
 		answer: 'Raupy',
-		reward: 'Korrekt! Raupy entwickelt sich zu Safcon!',
+		reward: 'Korrekt! Raupy entwickelt sich zu Safcon! Bauschritte: 306-333',
 		day: 9,
 		createdAt: new Date(),
 		updatedAt: new Date()
@@ -247,7 +247,7 @@ const sampleQuestions: SeedQuestion[] = [
 		_id: 'bug-safcon',
 		question: 'In welches Pokémon entwickelt sich Safcon auf Level 10?',
 		answer: 'Smettbo',
-		reward: 'Richtig! Safcon wird zu Smettbo!',
+		reward: 'Richtig! Safcon wird zu Smettbo! Bauschritte: 306-333',
 		day: 9,
 		createdAt: new Date(),
 		updatedAt: new Date()
@@ -256,7 +256,7 @@ const sampleQuestions: SeedQuestion[] = [
 		_id: 'bug-hornliu',
 		question: 'Wie heißt das Käfer-Pokémon, das sich zu Kokuna entwickelt?',
 		answer: 'Hornliu',
-		reward: 'Genau! Hornliu entwickelt sich zu Kokuna!',
+		reward: 'Genau! Hornliu entwickelt sich zu Kokuna! Bauschritte: 306-333',
 		day: 9,
 		createdAt: new Date(),
 		updatedAt: new Date()
@@ -266,7 +266,7 @@ const sampleQuestions: SeedQuestion[] = [
 		_id: 'flying-taubsi',
 		question: 'Wie heißt das erste Normal-Flug-Pokémon, das man in den Spielen fangen kann?',
 		answer: 'Taubsi',
-		reward: 'Korrekt! Taubsi ist das erste Normal-Flug-Pokémon!',
+		reward: 'Korrekt! Taubsi ist das erste Normal-Flug-Pokémon! Bauschritte: 334-377',
 		day: 10,
 		createdAt: new Date(),
 		updatedAt: new Date()
@@ -275,7 +275,7 @@ const sampleQuestions: SeedQuestion[] = [
 		_id: 'flying-tauboga',
 		question: 'In welches Pokémon entwickelt sich Taubsi auf Level 18?',
 		answer: 'Tauboga',
-		reward: 'Richtig! Taubsi wird zu Tauboga!',
+		reward: 'Richtig! Taubsi wird zu Tauboga! Bauschritte: 334-377',
 		day: 10,
 		createdAt: new Date(),
 		updatedAt: new Date()
@@ -284,7 +284,7 @@ const sampleQuestions: SeedQuestion[] = [
 		_id: 'flying-tauboss',
 		question: 'In welches Pokémon entwickelt sich Tauboga auf Level 36?',
 		answer: 'Tauboss',
-		reward: 'Genau! Tauboga wird zu Tauboss!',
+		reward: 'Genau! Tauboga wird zu Tauboss! Bauschritte: 334-377',
 		day: 10,
 		createdAt: new Date(),
 		updatedAt: new Date()
@@ -294,7 +294,7 @@ const sampleQuestions: SeedQuestion[] = [
 		_id: 'water-karpador',
 		question: 'Wie heißt das schwache Wasser-Pokémon, das sich zu Garados entwickelt?',
 		answer: 'Karpador',
-		reward: 'Korrekt! Karpador wird zu Garados!',
+		reward: 'Korrekt! Karpador wird zu Garados! Bauschritte: 378-417',
 		day: 11,
 		createdAt: new Date(),
 		updatedAt: new Date()
@@ -303,7 +303,7 @@ const sampleQuestions: SeedQuestion[] = [
 		_id: 'water-garados',
 		question: 'Auf welchem Level entwickelt sich Karpador zu Garados?',
 		answer: '20',
-		reward: 'Richtig! Karpador entwickelt sich auf Level 20!',
+		reward: 'Richtig! Karpador entwickelt sich auf Level 20! Bauschritte: 378-417',
 		day: 11,
 		createdAt: new Date(),
 		updatedAt: new Date()
@@ -312,7 +312,7 @@ const sampleQuestions: SeedQuestion[] = [
 		_id: 'water-lapras',
 		question: 'Wie heißt das seltene Wasser-Eis-Pokémon, das man in der Blauen Höhle findet?',
 		answer: 'Lapras',
-		reward: 'Genau! Lapras ist in der Blauen Höhle zu finden!',
+		reward: 'Genau! Lapras ist in der Blauen Höhle zu finden! Bauschritte: 378-417',
 		day: 11,
 		createdAt: new Date(),
 		updatedAt: new Date()
@@ -322,7 +322,7 @@ const sampleQuestions: SeedQuestion[] = [
 		_id: 'rock-kleinstein',
 		question: 'Wie heißt das Gestein-Pokémon, das sich zu Georok entwickelt?',
 		answer: 'Kleinstein',
-		reward: 'Korrekt! Kleinstein wird zu Georok!',
+		reward: 'Korrekt! Kleinstein wird zu Georok! Bauschritte: 418-452',
 		day: 12,
 		createdAt: new Date(),
 		updatedAt: new Date()
@@ -331,7 +331,7 @@ const sampleQuestions: SeedQuestion[] = [
 		_id: 'rock-georok',
 		question: 'In welches Pokémon entwickelt sich Georok beim Tausch?',
 		answer: 'Geowaz',
-		reward: 'Richtig! Georok wird beim Tausch zu Geowaz!',
+		reward: 'Richtig! Georok wird beim Tausch zu Geowaz! Bauschritte: 418-452',
 		day: 12,
 		createdAt: new Date(),
 		updatedAt: new Date()
@@ -340,7 +340,7 @@ const sampleQuestions: SeedQuestion[] = [
 		_id: 'ground-digda',
 		question: 'Wie heißt das Boden-Pokémon, das sich zu Digdri entwickelt?',
 		answer: 'Digda',
-		reward: 'Genau! Digda wird zu Digdri!',
+		reward: 'Genau! Digda wird zu Digdri! Bauschritte: 418-452',
 		day: 12,
 		createdAt: new Date(),
 		updatedAt: new Date()
@@ -349,7 +349,7 @@ const sampleQuestions: SeedQuestion[] = [
 		_id: 'ground-ponita',
 		question: 'Auf welchem Level entwickelt sich Ponita zu Gallopa?',
 		answer: '40',
-		reward: 'Korrekt! Ponita entwickelt sich auf Level 40 zu Gallopa!',
+		reward: 'Korrekt! Ponita entwickelt sich auf Level 40 zu Gallopa! Bauschritte: 418-452',
 		day: 12,
 		createdAt: new Date(),
 		updatedAt: new Date()
@@ -359,7 +359,7 @@ const sampleQuestions: SeedQuestion[] = [
 		_id: 'ghost-nebulak',
 		question: 'Wie heißt das Geist-Pokémon, das man im Pokémon-Turm findet?',
 		answer: 'Nebulak',
-		reward: 'Korrekt! Nebulak ist im Pokémon-Turm!',
+		reward: 'Korrekt! Nebulak ist im Pokémon-Turm! Bauschritte: 453-496',
 		day: 13,
 		createdAt: new Date(),
 		updatedAt: new Date()
@@ -368,7 +368,7 @@ const sampleQuestions: SeedQuestion[] = [
 		_id: 'ghost-alpollo',
 		question: 'In welches Pokémon entwickelt sich Nebulak auf Level 25?',
 		answer: 'Alpollo',
-		reward: 'Richtig! Nebulak wird zu Alpollo!',
+		reward: 'Richtig! Nebulak wird zu Alpollo! Bauschritte: 453-496',
 		day: 13,
 		createdAt: new Date(),
 		updatedAt: new Date()
@@ -377,7 +377,7 @@ const sampleQuestions: SeedQuestion[] = [
 		_id: 'ghost-gengar',
 		question: 'In welches Pokémon entwickelt sich Alpollo beim Tausch?',
 		answer: 'Gengar',
-		reward: 'Genau! Alpollo wird beim Tausch zu Gengar!',
+		reward: 'Genau! Alpollo wird beim Tausch zu Gengar! Bauschritte: 453-496',
 		day: 13,
 		createdAt: new Date(),
 		updatedAt: new Date()
@@ -387,7 +387,7 @@ const sampleQuestions: SeedQuestion[] = [
 		_id: 'psychic-abra',
 		question: 'Wie heißt das Psycho-Pokémon, das sich sofort zu Kadabra entwickelt?',
 		answer: 'Abra',
-		reward: 'Korrekt! Abra entwickelt sich sofort zu Kadabra!',
+		reward: 'Korrekt! Abra entwickelt sich sofort zu Kadabra! Bauschritte: 497-528',
 		day: 14,
 		createdAt: new Date(),
 		updatedAt: new Date()
@@ -396,7 +396,7 @@ const sampleQuestions: SeedQuestion[] = [
 		_id: 'psychic-mew',
 		question: 'Welchen Typ hat Mew?',
 		answer: 'Psycho',
-		reward: 'Richtig! Mew ist ein Psycho-Pokémon!',
+		reward: 'Richtig! Mew ist ein Psycho-Pokémon! Bauschritte: 497-528',
 		day: 14,
 		createdAt: new Date(),
 		updatedAt: new Date()
@@ -405,7 +405,7 @@ const sampleQuestions: SeedQuestion[] = [
 		_id: 'psychic-mewtu',
 		question: 'Welchen Typ hat Mewtu?',
 		answer: 'Psycho',
-		reward: 'Genau! Mewtu ist ein Psycho-Pokémon!',
+		reward: 'Genau! Mewtu ist ein Psycho-Pokémon! Bauschritte: 497-528',
 		day: 14,
 		createdAt: new Date(),
 		updatedAt: new Date()
@@ -415,7 +415,7 @@ const sampleQuestions: SeedQuestion[] = [
 		_id: 'fire-fukano',
 		question: 'Wie heißt das Feuer-Pokémon, das sich zu Arkani entwickelt?',
 		answer: 'Fukano',
-		reward: 'Korrekt! Fukano wird zu Arkani!',
+		reward: 'Korrekt! Fukano wird zu Arkani! Bauschritte: 529-569',
 		day: 15,
 		createdAt: new Date(),
 		updatedAt: new Date()
@@ -424,7 +424,7 @@ const sampleQuestions: SeedQuestion[] = [
 		_id: 'fire-arkani',
 		question: 'Auf welchem Level entwickelt sich Fukano zu Arkani?',
 		answer: '36',
-		reward: 'Richtig! Fukano entwickelt sich auf Level 36!',
+		reward: 'Richtig! Fukano entwickelt sich auf Level 36! Bauschritte: 529-569',
 		day: 15,
 		createdAt: new Date(),
 		updatedAt: new Date()
@@ -433,7 +433,7 @@ const sampleQuestions: SeedQuestion[] = [
 		_id: 'fire-magmar',
 		question: 'Wie heißt das Feuer-Pokémon, das man in der Feuerinsel-Höhle findet?',
 		answer: 'Magmar',
-		reward: 'Genau! Magmar ist in der Feuerinsel-Höhle!',
+		reward: 'Genau! Magmar ist in der Feuerinsel-Höhle! Bauschritte: 529-569',
 		day: 15,
 		createdAt: new Date(),
 		updatedAt: new Date()
@@ -443,7 +443,7 @@ const sampleQuestions: SeedQuestion[] = [
 		_id: 'electric-porenta',
 		question: 'Wie heißt das Elektro-Pokémon, das man im Kraftwerk findet? (LOL KI)',
 		answer: 'Porenta',
-		reward: 'Korrekt! Porenta ist im Kraftwerk zu finden!',
+		reward: 'Korrekt! Porenta ist im Kraftwerk zu finden! Bauschritte: 570-598',
 		day: 16,
 		createdAt: new Date(),
 		updatedAt: new Date()
@@ -452,7 +452,7 @@ const sampleQuestions: SeedQuestion[] = [
 		_id: 'electric-voltobal',
 		question: 'Wie heißt das Elektro-Pokémon, das wie eine Pokéball aussieht?',
 		answer: 'Voltobal',
-		reward: 'Richtig! Voltobal sieht aus wie ein Pokéball!',
+		reward: 'Richtig! Voltobal sieht aus wie ein Pokéball! Bauschritte: 570-598',
 		day: 16,
 		createdAt: new Date(),
 		updatedAt: new Date()
@@ -461,7 +461,7 @@ const sampleQuestions: SeedQuestion[] = [
 		_id: 'electric-lektrobal',
 		question: 'In welches Pokémon entwickelt sich Voltobal auf Level 30?',
 		answer: 'Lektrobal',
-		reward: 'Genau! Voltobal wird zu Lektrobal!',
+		reward: 'Genau! Voltobal wird zu Lektrobal! Bauschritte: 570-598',
 		day: 16,
 		createdAt: new Date(),
 		updatedAt: new Date()
@@ -471,7 +471,7 @@ const sampleQuestions: SeedQuestion[] = [
 		_id: 'ice-arktos',
 		question: 'Welches legendäre Pokémon hat den Typ Eis und Flug?',
 		answer: 'Arktos',
-		reward: 'Korrekt! Arktos ist Eis-Flug!',
+		reward: 'Korrekt! Arktos ist Eis-Flug! Bauschritte: 599-640',
 		day: 17,
 		createdAt: new Date(),
 		updatedAt: new Date()
@@ -480,7 +480,7 @@ const sampleQuestions: SeedQuestion[] = [
 		_id: 'ice-lapras',
 		question: 'Welches Wasser-Pokémon hat auch den Typ Eis?',
 		answer: 'Lapras',
-		reward: 'Richtig! Lapras ist Wasser-Eis!',
+		reward: 'Richtig! Lapras ist Wasser-Eis! Bauschritte: 599-640',
 		day: 17,
 		createdAt: new Date(),
 		updatedAt: new Date()
@@ -490,7 +490,7 @@ const sampleQuestions: SeedQuestion[] = [
 		_id: 'dragon-dratini',
 		question: 'Wie heißt das erste Drachen-Pokémon, das man im Spiel fangen kann?',
 		answer: 'Dratini',
-		reward: 'Korrekt! Dratini ist das erste Drachen-Pokémon!',
+		reward: 'Korrekt! Dratini ist das erste Drachen-Pokémon! Bauschritte: 641-678',
 		day: 18,
 		createdAt: new Date(),
 		updatedAt: new Date()
@@ -499,7 +499,7 @@ const sampleQuestions: SeedQuestion[] = [
 		_id: 'dragon-dragonir',
 		question: 'In welches Pokémon entwickelt sich Dratini auf Level 30?',
 		answer: 'Dragonir',
-		reward: 'Richtig! Dratini wird zu Dragonir!',
+		reward: 'Richtig! Dratini wird zu Dragonir! Bauschritte: 641-678',
 		day: 18,
 		createdAt: new Date(),
 		updatedAt: new Date()
@@ -508,7 +508,7 @@ const sampleQuestions: SeedQuestion[] = [
 		_id: 'dragon-dragoran',
 		question: 'In welches Pokémon entwickelt sich Dragonir auf Level 55?',
 		answer: 'Dragoran',
-		reward: 'Genau! Dragonir wird zu Dragoran!',
+		reward: 'Genau! Dragonir wird zu Dragoran! Bauschritte: 641-678',
 		day: 18,
 		createdAt: new Date(),
 		updatedAt: new Date()
@@ -518,7 +518,7 @@ const sampleQuestions: SeedQuestion[] = [
 		_id: 'fighting-machollo',
 		question: 'Wie heißt das Kampf-Pokémon, das sich zu Maschock entwickelt?',
 		answer: 'Machollo',
-		reward: 'Korrekt! Machollo wird zu Maschock!',
+		reward: 'Korrekt! Machollo wird zu Maschock! Bauschritte: 679-724',
 		day: 19,
 		createdAt: new Date(),
 		updatedAt: new Date()
@@ -527,7 +527,7 @@ const sampleQuestions: SeedQuestion[] = [
 		_id: 'fighting-maschock',
 		question: 'Auf welchem Level entwickelt sich Machollo zu Maschock?',
 		answer: '28',
-		reward: 'Richtig! Machollo entwickelt sich auf Level 28 zu Maschock!',
+		reward: 'Richtig! Machollo entwickelt sich auf Level 28 zu Maschock! Bauschritte: 679-724',
 		day: 19,
 		createdAt: new Date(),
 		updatedAt: new Date()
@@ -536,7 +536,7 @@ const sampleQuestions: SeedQuestion[] = [
 		_id: 'fighting-machomei',
 		question: 'In welches Pokémon entwickelt sich Maschock beim Tausch?',
 		answer: 'Machomei',
-		reward: 'Genau! Maschock wird beim Tausch zu Machomei!',
+		reward: 'Genau! Maschock wird beim Tausch zu Machomei! Bauschritte: 679-724',
 		day: 19,
 		createdAt: new Date(),
 		updatedAt: new Date()
@@ -545,7 +545,7 @@ const sampleQuestions: SeedQuestion[] = [
 		_id: 'fighting-menki',
 		question: 'Wie heißt das Kampf-Pokémon, das sich zu Rasaff entwickelt?',
 		answer: 'Menki',
-		reward: 'Genau! Menki wird zu Rasaff!',
+		reward: 'Genau! Menki wird zu Rasaff! Bauschritte: 679-724',
 		day: 19,
 		createdAt: new Date(),
 		updatedAt: new Date()
@@ -555,7 +555,7 @@ const sampleQuestions: SeedQuestion[] = [
 		_id: 'anime-ash-pikachu',
 		question: 'Welches Pokémon ist Ashes treuester Begleiter?',
 		answer: 'Pikachu',
-		reward: 'Korrekt! Pikachu ist Ashes bester Freund!',
+		reward: 'Korrekt! Pikachu ist Ashes bester Freund! Bauschritte: 725-762',
 		day: 20,
 		createdAt: new Date(),
 		updatedAt: new Date()
@@ -564,7 +564,7 @@ const sampleQuestions: SeedQuestion[] = [
 		_id: 'anime-ash-tauboga',
 		question: 'Welches Normal-Flug-Pokémon hat Ash in der ersten Staffel gefangen?',
 		answer: 'Tauboga',
-		reward: 'Richtig! Ash hat ein Tauboga gefangen!',
+		reward: 'Richtig! Ash hat ein Tauboga gefangen! Bauschritte: 725-762',
 		day: 20,
 		createdAt: new Date(),
 		updatedAt: new Date()
@@ -573,7 +573,7 @@ const sampleQuestions: SeedQuestion[] = [
 		_id: 'anime-ash-schiggy',
 		question: 'Welches Starter-Pokémon hat Ash von Professor Eich erhalten? (LOL AI)',
 		answer: 'Schiggy',
-		reward: 'Genau! Ash hat Schiggy bekommen!',
+		reward: 'Genau! Ash hat Schiggy bekommen! Bauschritte: 725-762',
 		day: 20,
 		createdAt: new Date(),
 		updatedAt: new Date()
@@ -583,7 +583,7 @@ const sampleQuestions: SeedQuestion[] = [
 		_id: 'anime-rocket-jessie',
 		question: 'Wie heißt die weibliche Mitglied von Team Rocket?',
 		answer: 'Jessie',
-		reward: 'Korrekt! Jessie ist Mitglied von Team Rocket!',
+		reward: 'Korrekt! Jessie ist Mitglied von Team Rocket! Bauschritte: 763-798',
 		day: 21,
 		createdAt: new Date(),
 		updatedAt: new Date()
@@ -592,7 +592,7 @@ const sampleQuestions: SeedQuestion[] = [
 		_id: 'anime-rocket-james',
 		question: 'Wie heißt der männliche Mitglied von Team Rocket?',
 		answer: 'James',
-		reward: 'Richtig! James ist Mitglied von Team Rocket!',
+		reward: 'Richtig! James ist Mitglied von Team Rocket! Bauschritte: 763-798',
 		day: 21,
 		createdAt: new Date(),
 		updatedAt: new Date()
@@ -601,7 +601,7 @@ const sampleQuestions: SeedQuestion[] = [
 		_id: 'anime-rocket-meowth',
 		question: 'Welches Pokémon spricht in Team Rocket?',
 		answer: 'Mauzi',
-		reward: 'MiauZ! Genau! Mauzi kann sprechen!',
+		reward: 'MiauZ! Genau! Mauzi kann sprechen! Bauschritte: 763-798',
 		day: 21,
 		createdAt: new Date(),
 		updatedAt: new Date()
@@ -611,7 +611,7 @@ const sampleQuestions: SeedQuestion[] = [
 		_id: 'movie-mew',
 		question: 'Welches legendäre Pokémon ist der Star des ersten Pokémon-Films?',
 		answer: 'Mew',
-		reward: 'Korrekt! Mew ist der Star des ersten Films!',
+		reward: 'Korrekt! Mew ist der Star des ersten Films! Bauschritte: 799-845',
 		day: 22,
 		createdAt: new Date(),
 		updatedAt: new Date()
@@ -620,7 +620,7 @@ const sampleQuestions: SeedQuestion[] = [
 		_id: 'movie-mewtu',
 		question: 'Welches Pokémon ist der Antagonist im ersten Pokémon-Film?',
 		answer: 'Mewtu',
-		reward: 'Richtig! Mewtu ist der Antagonist!',
+		reward: 'Richtig! Mewtu ist der Antagonist! Bauschritte: 799-845',
 		day: 22,
 		createdAt: new Date(),
 		updatedAt: new Date()
@@ -629,7 +629,7 @@ const sampleQuestions: SeedQuestion[] = [
 		_id: 'movie-title',
 		question: 'Wie heißt der erste Pokémon-Film auf Deutsch?',
 		answer: 'Mewtu schlägt zurück',
-		reward: 'Genau! Der Film heißt "Mewtu schlägt zurück"!',
+		reward: 'Genau! Der Film heißt "Mewtu schlägt zurück"! Bauschritte: 799-845',
 		day: 22,
 		createdAt: new Date(),
 		updatedAt: new Date()
@@ -639,7 +639,7 @@ const sampleQuestions: SeedQuestion[] = [
 		_id: 'game-pokedex',
 		question: 'Wie viele Pokémon gibt es in der ersten Generation?',
 		answer: '151',
-		reward: 'Korrekt! Es gibt 151 Pokémon in der ersten Generation!',
+		reward: 'Korrekt! Es gibt 151 Pokémon in der ersten Generation! Bauschritte: 846-874',
 		day: 23,
 		createdAt: new Date(),
 		updatedAt: new Date()
@@ -648,7 +648,7 @@ const sampleQuestions: SeedQuestion[] = [
 		_id: 'game-evolution-stone',
 		question: 'Wie viele verschiedene Entwicklungssteine gibt es in den ersten Spielen?',
 		answer: '5',
-		reward: 'Richtig! Es gibt 5 Entwicklungssteine!',
+		reward: 'Richtig! Es gibt 5 Entwicklungssteine! Bauschritte: 846-874',
 		day: 23,
 		createdAt: new Date(),
 		updatedAt: new Date()
@@ -657,7 +657,7 @@ const sampleQuestions: SeedQuestion[] = [
 		_id: 'game-starter-choice',
 		question: 'Wie viele Starter-Pokémon kann man am Anfang wählen?',
 		answer: '3',
-		reward: 'Genau! Man kann zwischen 3 Startern wählen!',
+		reward: 'Genau! Man kann zwischen 3 Startern wählen! Bauschritte: 846-874',
 		day: 23,
 		createdAt: new Date(),
 		updatedAt: new Date()
@@ -668,7 +668,7 @@ const sampleQuestions: SeedQuestion[] = [
 		question:
 			'Wie heißen die drei legendären Vögel der ersten Generation? (Alphabetische Reihenfolge)',
 		answer: 'Arktos Lavados Zapdos',
-		reward: 'Perfekt! Arktos, Zapdos und Lavados sind die legendären Vögel!',
+		reward: 'Perfekt! Arktos, Zapdos und Lavados sind die legendären Vögel! Bauschritte: 875-918',
 		day: 24,
 		createdAt: new Date(),
 		updatedAt: new Date()
@@ -677,7 +677,7 @@ const sampleQuestions: SeedQuestion[] = [
 		_id: 'legendary-mew',
 		question: 'Welches Pokémon ist das letzte im Pokédex der ersten Generation?',
 		answer: 'Mew',
-		reward: 'Korrekt! Mew ist Nummer 151!',
+		reward: 'Korrekt! Mew ist Nummer 151! Bauschritte: 875-918',
 		day: 24,
 		createdAt: new Date(),
 		updatedAt: new Date()
@@ -686,7 +686,7 @@ const sampleQuestions: SeedQuestion[] = [
 		_id: 'legendary-mewtu',
 		question: 'Wo findet man Mewtu in Pokémon Rot und Blau?',
 		answer: 'Blauen Höhle',
-		reward: 'Richtig! Mewtu ist in der Blauen Höhle!',
+		reward: 'Richtig! Mewtu ist in der Blauen Höhle! Bauschritte: 875-918',
 		day: 24,
 		createdAt: new Date(),
 		updatedAt: new Date()
