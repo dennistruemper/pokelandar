@@ -16,9 +16,54 @@
 	--font-pokemon: 'Pokemon', 'Press Start 2P', monospace;
 }
 
+/* Pokémon Red Theme (default) */
+:root,
+[data-theme='red'] {
+	--theme-primary: #e63946; /* Pokémon Red */
+	--theme-primary-dark: #c1121f;
+	--theme-primary-light: #f77f7f;
+	--theme-secondary: #f1faee; /* Light background */
+	--theme-accent: #ff6b6b;
+	--theme-success: #06a77d; /* Green for available days */
+	--theme-completed: #7209b7; /* Purple for completed days */
+	--theme-warning: #f77f00; /* Orange/Yellow for locked days */
+	--theme-text: #1d3557;
+	--theme-text-light: #457b9d;
+	--theme-bg: #ffffff;
+	--theme-bg-alt: #f1faee;
+	--theme-border: #a8dadc;
+	--theme-card-bg: #ffffff;
+	--theme-shadow: rgba(230, 57, 70, 0.2);
+}
+
+/* Pokémon Blue Theme */
+[data-theme='blue'] {
+	--theme-primary: #219ebc; /* Pokémon Blue */
+	--theme-primary-dark: #023047;
+	--theme-primary-light: #8ecae6;
+	--theme-secondary: #e0f2fe; /* Light blue background */
+	--theme-accent: #4a90e2;
+	--theme-success: #06a77d; /* Green for available days */
+	--theme-completed: #7209b7; /* Purple for completed days */
+	--theme-warning: #f77f00; /* Orange/Yellow for locked days */
+	--theme-text: #023047;
+	--theme-text-light: #219ebc;
+	--theme-bg: #ffffff;
+	--theme-bg-alt: #e0f2fe;
+	--theme-border: #8ecae6;
+	--theme-card-bg: #ffffff;
+	--theme-shadow: rgba(33, 158, 188, 0.2);
+}
+
+body {
+	background-color: var(--theme-bg-alt);
+	color: var(--theme-text);
+	transition: background-color 0.3s ease, color 0.3s ease;
+}
+
 h1 {
 	font-family: var(--font-pokemon);
 	letter-spacing: 0.05em;
-	/* Make it look more like Pokémon game font */
 	text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.1);
+	color: var(--theme-primary);
 }
