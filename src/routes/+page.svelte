@@ -12,7 +12,7 @@
 	let { data }: { data: PageData } = $props();
 
 	const daysWithQuestions: number[] = data?.days ?? [];
-	const currentDay = data?.currentDay ?? new Date().getDate();
+	const currentDay = data?.currentDay ?? 0; // Will be 0 if before 2025-01-01
 
 	let sessionCode = $state<string | null>(null);
 	let completedDays = $state<number[]>([]);
@@ -82,6 +82,8 @@
 	}
 
 	function isFutureDay(day: number): boolean {
+		// If currentDay is 0, calendar hasn't started yet - all days are future
+		if (currentDay === 0) return true;
 		return day > currentDay;
 	}
 
@@ -129,6 +131,16 @@
 
 <div class="container mx-auto px-4 py-8">
 	<h1 class="mb-8 pr-12 text-center text-2xl font-bold sm:pr-0 sm:text-3xl">Adventskalender</h1>
+
+	{#if currentDay === 0}
+		<div
+			class="mb-6 rounded-lg border-2 p-4 text-center"
+			style="border-color: var(--theme-warning); background-color: rgba(247, 127, 0, 0.1); color: var(--theme-warning);"
+		>
+			<p class="font-semibold">Der Adventskalender startet am 1. Dezember 2025!</p>
+			<p class="mt-2 text-sm">Bis dahin sind alle Tage gesperrt.</p>
+		</div>
+	{/if}
 
 	<!-- Pokemon Code Display/Input -->
 	<div

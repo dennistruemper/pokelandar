@@ -1,4 +1,5 @@
 import { query } from '$app/server';
+import { CALENDAR_START_DATE } from '$lib/constants';
 import { connectToDatabase } from '$lib/server/db';
 import { generatePokemonCode, isValidPokemonCode } from '$lib/server/pokemon-codes';
 import type { Session } from '$lib/types/session';
@@ -139,6 +140,12 @@ export const createSessionWithCode = query('unchecked', async (code: unknown) =>
  * Marks a day as completed for a session
  */
 export const completeDay = query('unchecked', async (params: unknown) => {
+	// Check if calendar has started
+	const now = new Date();
+	if (now < CALENDAR_START_DATE) {
+		return { success: false, error: 'Calendar has not started yet' };
+	}
+
 	if (!params || typeof params !== 'object') {
 		return { success: false, error: 'Invalid parameters' };
 	}
@@ -199,6 +206,12 @@ export const completeDay = query('unchecked', async (params: unknown) => {
  * Checks if a day can be accessed (previous day completed)
  */
 export const canAccessDay = query('unchecked', async (params: unknown) => {
+	// Check if calendar has started
+	const now = new Date();
+	if (now < CALENDAR_START_DATE) {
+		return { canAccess: false, reason: 'Calendar has not started yet', requiredDay: null };
+	}
+
 	if (!params || typeof params !== 'object') {
 		return { canAccess: false, reason: 'Invalid parameters' };
 	}
