@@ -1,0 +1,14 @@
+version: '3.8'
+
+# This file is for local development with exposed ports
+# Use with: docker-compose -f docker-compose.yml -f docker-compose.dev.yml up
+
+services:
+  mongodb:
+    ports:
+      - "27017:27017"
+
+  app:
+    ports:
+      - "3000:3000"
+

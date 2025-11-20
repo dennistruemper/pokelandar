@@ -1,0 +1,17 @@
+node_modules
+.svelte-kit
+.output
+.git
+.gitignore
+.env
+.env.*
+!.env.example
+*.log
+.DS_Store
+Thumbs.db
+test-results
+playwright-report
+coverage
+.vscode
+.idea
+

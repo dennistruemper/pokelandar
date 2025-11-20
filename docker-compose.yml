@@ -1,0 +1,65 @@
+version: '3.8'
+
+services:
+  mongodb:
+    image: mongo:7
+    container_name: pokelandar-mongodb
+    restart: unless-stopped
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: password
+      MONGO_INITDB_DATABASE: pokelandar
+    volumes:
+      - mongodb_data:/data/db
+    networks:
+      - pokelandar-network
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  seed:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: pokelandar-seed
+    restart: "no"
+    depends_on:
+      mongodb:
+        condition: service_healthy
+    environment:
+      MONGODB_URI: mongodb://admin:password@mongodb:27017/pokelandar?authSource=admin
+      MONGODB_DB_NAME: pokelandar
+      NODE_ENV: production
+    command: ["bun", "scripts/seed.ts"]
+    networks:
+      - pokelandar-network
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: pokelandar-app
+    restart: unless-stopped
+    depends_on:
+      mongodb:
+        condition: service_healthy
+      seed:
+        condition: service_completed_successfully
+    environment:
+      MONGODB_URI: mongodb://admin:password@mongodb:27017/pokelandar?authSource=admin
+      MONGODB_DB_NAME: pokelandar
+      NODE_ENV: production
+      PORT: 3000
+      HOST: 0.0.0.0
+    networks:
+      - pokelandar-network
+
+volumes:
+  mongodb_data:
+
+networks:
+  pokelandar-network:
+    driver: bridge
+
