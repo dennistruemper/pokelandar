@@ -1,6 +1,8 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
 	import type { PageData } from './$types';
+	import { sessionStore } from '$lib/stores/session';
+	import { completeDay } from '../../session.remote';
 
 	let { data }: { data: PageData } = $props();
 
@@ -10,6 +12,12 @@
 	let revealedLetters = $state<Set<number>>(new Set());
 	let isCorrect = $state(false);
 	let showReward = $state(false);
+	let sessionCode = $state<string | null>(null);
+
+	// Subscribe to session store
+	sessionStore.subscribe((state) => {
+		sessionCode = state.code;
+	});
 
 	function formatAnswerHint(answer: string, revealed: Set<number>): string {
 		return answer
@@ -40,7 +48,7 @@
 		}
 	}
 
-	function checkAnswer() {
+	async function checkAnswer() {
 		if (!answerInput.trim()) return;
 
 		const normalizedInput = answerInput.trim().toLowerCase();
@@ -49,6 +57,14 @@
 		if (normalizedInput === normalizedAnswer) {
 			isCorrect = true;
 			showReward = true;
+
+			// Mark day as completed if session exists
+			if (sessionCode && question.day) {
+				const result = await completeDay({ sessionCode, day: question.day });
+				if (result.success) {
+					sessionStore.updateProgress(result.completedDays, result.lastCompletedDay);
+				}
+			}
 		} else {
 			wrongAttempts++;
 			answerInput = '';

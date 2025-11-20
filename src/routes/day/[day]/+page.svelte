@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { getQuestionsForDay } from '../../days.remote';
-	import { page } from '$app/stores';
+	import { goto } from '$app/navigation';
 
 	let { params } = $props();
 	const day = Number(params.day);
@@ -21,12 +21,13 @@
 	{:else}
 		<div class="space-y-4 mb-6">
 			{#each questions as question (question._id)}
-				<a
-					href="/question/{question._id}"
-					class="block bg-white border border-gray-200 rounded-lg shadow-sm p-6 hover:bg-gray-50 hover:border-gray-300 transition-colors cursor-pointer"
+				<button
+					type="button"
+					onclick={() => goto(`/question/${question._id}`)}
+					class="w-full text-left block bg-white border border-gray-200 rounded-lg shadow-sm p-6 hover:bg-gray-50 hover:border-gray-300 transition-colors cursor-pointer"
 				>
 					<p class="text-lg font-medium">{question.question}</p>
-				</a>
+				</button>
 			{/each}
 		</div>
 		<a href="/" class="text-blue-600 hover:underline">← Zurück zum Kalender</a>
