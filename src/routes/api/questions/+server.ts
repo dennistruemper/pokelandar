@@ -1,7 +1,7 @@
-import { json } from '@sveltejs/kit';
-import type { RequestHandler } from './$types';
 import { connectToDatabase } from '$lib/server/db';
 import type { Question } from '$lib/types/question';
+import { json } from '@sveltejs/kit';
+import type { RequestHandler } from './$types';
 
 export const GET: RequestHandler = async () => {
 	try {
@@ -20,4 +20,3 @@ export const GET: RequestHandler = async () => {
 		return json({ error: 'Failed to fetch questions' }, { status: 500 });
 	}
 };
-

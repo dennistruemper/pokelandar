@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
 	import type { Question } from '$lib/types/question';
+	import { onMount } from 'svelte';
 
 	let questions: Question[] = [];
 	let loading = true;
@@ -23,31 +23,42 @@
 </script>
 
 <div class="container mx-auto px-4 py-8">
-	<h1 class="text-3xl font-bold mb-6">All Questions</h1>
+	<h1 class="mb-6 text-3xl font-bold">Alle Fragen</h1>
 
 	{#if loading}
-		<p class="text-gray-600">Loading questions...</p>
+		<p class="text-gray-600">Fragen werden geladen...</p>
 	{:else if error}
-		<div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
-			<p>Error: {error}</p>
+		<div class="mb-4 rounded border border-red-400 bg-red-100 px-4 py-3 text-red-700">
+			<p>Fehler: {error}</p>
 		</div>
 	{:else if questions.length === 0}
-		<p class="text-gray-600">No questions found. Please seed the database first.</p>
+		<p class="text-gray-600">Keine Fragen gefunden. Bitte zuerst die Datenbank befüllen.</p>
 	{:else}
 		<div class="space-y-4">
 			{#each questions as question (question._id)}
-				<details class="bg-white border border-gray-200 rounded-lg shadow-sm">
-					<summary class="px-6 py-4 cursor-pointer hover:bg-gray-50 font-medium text-lg">
-						{question.question}
+				<details class="rounded-lg border border-gray-200 bg-white shadow-sm">
+					<summary class="cursor-pointer px-6 py-4 text-lg font-medium hover:bg-gray-50">
+						<div class="flex items-center justify-between">
+							<span>{question.question}</span>
+							{#if question.day}
+								<span class="ml-4 text-sm font-normal text-gray-500">Tag {question.day}</span>
+							{/if}
+						</div>
 					</summary>
-					<div class="px-6 py-4 border-t border-gray-200 bg-gray-50">
+					<div class="border-t border-gray-200 bg-gray-50 px-6 py-4">
 						<div class="space-y-3">
+							{#if question.day}
+								<div>
+									<p class="mb-1 text-sm font-semibold text-gray-700">Tag:</p>
+									<p class="text-gray-900">{question.day}</p>
+								</div>
+							{/if}
 							<div>
-								<p class="text-sm font-semibold text-gray-700 mb-1">Answer:</p>
+								<p class="mb-1 text-sm font-semibold text-gray-700">Antwort:</p>
 								<p class="text-gray-900">{question.answer}</p>
 							</div>
 							<div>
-								<p class="text-sm font-semibold text-gray-700 mb-1">Reward:</p>
+								<p class="mb-1 text-sm font-semibold text-gray-700">Belohnung:</p>
 								<p class="text-gray-900 italic">{question.reward}</p>
 							</div>
 						</div>
@@ -57,4 +68,3 @@
 		</div>
 	{/if}
 </div>
-
