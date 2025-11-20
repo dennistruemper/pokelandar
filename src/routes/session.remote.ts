@@ -1,7 +1,7 @@
 import { query } from '$app/server';
 import { connectToDatabase } from '$lib/server/db';
-import type { Session } from '$lib/types/session';
 import { generatePokemonCode, isValidPokemonCode } from '$lib/server/pokemon-codes';
+import type { Session } from '$lib/types/session';
 
 /**
  * Creates a new session with a Pokemon code
@@ -52,140 +52,130 @@ export const createSession = query(async () => {
 /**
  * Loads a session by Pokemon code
  */
-export const loadSessionByCode = query(
-	'unchecked',
-	async (code: unknown) => {
-		if (typeof code !== 'string' || !isValidPokemonCode(code)) {
-			return null;
-		}
-
-		try {
-			const db = await connectToDatabase();
-			const collection = db.collection<Session>('sessions');
-
-			const session = await collection.findOne({ code });
-
-			if (!session) {
-				return null;
-			}
-
-			return {
-				sessionId: session._id?.toString(),
-				code: session.code,
-				completedDays: session.completedDays,
-				lastCompletedDay: session.lastCompletedDay
-			};
-		} catch (error) {
-			console.error('Error loading session:', error);
-			return null;
-		}
+export const loadSessionByCode = query('unchecked', async (code: unknown) => {
+	if (typeof code !== 'string' || !isValidPokemonCode(code)) {
+		return null;
 	}
-);
+
+	try {
+		const db = await connectToDatabase();
+		const collection = db.collection<Session>('sessions');
+
+		const session = await collection.findOne({ code });
+
+		if (!session) {
+			return null;
+		}
+
+		return {
+			sessionId: session._id?.toString(),
+			code: session.code,
+			completedDays: session.completedDays,
+			lastCompletedDay: session.lastCompletedDay
+		};
+	} catch (error) {
+		console.error('Error loading session:', error);
+		return null;
+	}
+});
 
 /**
  * Marks a day as completed for a session
  */
-export const completeDay = query(
-	'unchecked',
-	async (params: unknown) => {
-		if (!params || typeof params !== 'object') {
-			return { success: false, error: 'Invalid parameters' };
-		}
-		const { sessionCode, day } = params as { sessionCode: unknown; day: unknown };
-		if (typeof sessionCode !== 'string' || typeof day !== 'number' || day < 1 || day > 24) {
-			return { success: false, error: 'Invalid parameters' };
-		}
-
-		try {
-			const db = await connectToDatabase();
-			const collection = db.collection<Session>('sessions');
-
-			const session = await collection.findOne({ code: sessionCode });
-
-			if (!session) {
-				return { success: false, error: 'Session not found' };
-			}
-
-			// Check if previous day is completed (unless it's day 1)
-			if (day > 1 && !session.completedDays.includes(day - 1)) {
-				return {
-					success: false,
-					error: 'Previous day must be completed first',
-					requiredDay: day - 1
-				};
-			}
-
-			// Add day to completedDays if not already there
-			const updatedCompletedDays = session.completedDays.includes(day)
-				? session.completedDays
-				: [...session.completedDays, day].sort((a, b) => a - b);
-
-			const lastCompletedDay = Math.max(session.lastCompletedDay, day);
-
-			await collection.updateOne(
-				{ code: sessionCode },
-				{
-					$set: {
-						completedDays: updatedCompletedDays,
-						lastCompletedDay,
-						updatedAt: new Date()
-					}
-				}
-			);
-
-			return {
-				success: true,
-				completedDays: updatedCompletedDays,
-				lastCompletedDay
-			};
-		} catch (error) {
-			console.error('Error completing day:', error);
-			return { success: false, error: 'Failed to complete day' };
-		}
+export const completeDay = query('unchecked', async (params: unknown) => {
+	if (!params || typeof params !== 'object') {
+		return { success: false, error: 'Invalid parameters' };
 	}
-);
+	const { sessionCode, day } = params as { sessionCode: unknown; day: unknown };
+	if (typeof sessionCode !== 'string' || typeof day !== 'number' || day < 1 || day > 24) {
+		return { success: false, error: 'Invalid parameters' };
+	}
+
+	try {
+		const db = await connectToDatabase();
+		const collection = db.collection<Session>('sessions');
+
+		const session = await collection.findOne({ code: sessionCode });
+
+		if (!session) {
+			return { success: false, error: 'Session not found' };
+		}
+
+		// Check if previous day is completed (unless it's day 1)
+		if (day > 1 && !session.completedDays.includes(day - 1)) {
+			return {
+				success: false,
+				error: 'Previous day must be completed first',
+				requiredDay: day - 1
+			};
+		}
+
+		// Add day to completedDays if not already there
+		const updatedCompletedDays = session.completedDays.includes(day)
+			? session.completedDays
+			: [...session.completedDays, day].sort((a, b) => a - b);
+
+		const lastCompletedDay = Math.max(session.lastCompletedDay, day);
+
+		await collection.updateOne(
+			{ code: sessionCode },
+			{
+				$set: {
+					completedDays: updatedCompletedDays,
+					lastCompletedDay,
+					updatedAt: new Date()
+				}
+			}
+		);
+
+		return {
+			success: true,
+			completedDays: updatedCompletedDays,
+			lastCompletedDay
+		};
+	} catch (error) {
+		console.error('Error completing day:', error);
+		return { success: false, error: 'Failed to complete day' };
+	}
+});
 
 /**
  * Checks if a day can be accessed (previous day completed)
  */
-export const canAccessDay = query(
-	'unchecked',
-	async (params: unknown) => {
-		if (!params || typeof params !== 'object') {
-			return { canAccess: false, reason: 'Invalid parameters' };
-		}
-		const { sessionCode, day } = params as { sessionCode: unknown; day: unknown };
-		if (typeof sessionCode !== 'string' || typeof day !== 'number' || day < 1 || day > 24) {
-			return { canAccess: false, reason: 'Invalid parameters' };
-		}
-
-		try {
-			const db = await connectToDatabase();
-			const collection = db.collection<Session>('sessions');
-
-			const session = await collection.findOne({ code: sessionCode });
-
-			if (!session) {
-				return { canAccess: false, reason: 'Session not found' };
-			}
-
-			// Day 1 is always accessible
-			if (day === 1) {
-				return { canAccess: true };
-			}
-
-			// Check if previous day is completed
-			const previousDayCompleted = session.completedDays.includes(day - 1);
-
-			return {
-				canAccess: previousDayCompleted,
-				reason: previousDayCompleted ? undefined : 'Previous day not completed',
-				requiredDay: previousDayCompleted ? undefined : day - 1
-			};
-		} catch (error) {
-			console.error('Error checking day access:', error);
-			return { canAccess: false, reason: 'Error checking access' };
-		}
+export const canAccessDay = query('unchecked', async (params: unknown) => {
+	if (!params || typeof params !== 'object') {
+		return { canAccess: false, reason: 'Invalid parameters' };
 	}
-);
+	const { sessionCode, day } = params as { sessionCode: unknown; day: unknown };
+	if (typeof sessionCode !== 'string' || typeof day !== 'number' || day < 1 || day > 24) {
+		return { canAccess: false, reason: 'Invalid parameters' };
+	}
 
+	try {
+		const db = await connectToDatabase();
+		const collection = db.collection<Session>('sessions');
+
+		const session = await collection.findOne({ code: sessionCode });
+
+		if (!session) {
+			return { canAccess: false, reason: 'Session not found' };
+		}
+
+		// Day 1 is always accessible
+		if (day === 1) {
+			return { canAccess: true };
+		}
+
+		// Check if previous day is completed
+		const previousDayCompleted = session.completedDays.includes(day - 1);
+
+		return {
+			canAccess: previousDayCompleted,
+			reason: previousDayCompleted ? undefined : 'Previous day not completed',
+			requiredDay: previousDayCompleted ? undefined : day - 1
+		};
+	} catch (error) {
+		console.error('Error checking day access:', error);
+		return { canAccess: false, reason: 'Error checking access' };
+	}
+});

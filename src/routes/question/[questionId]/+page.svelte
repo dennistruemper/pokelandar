@@ -97,6 +97,12 @@
 			{#if showReward}
 				<p class="text-green-600 mt-2 italic">{question.reward}</p>
 			{/if}
+			<button
+				onclick={() => goto('/')}
+				class="mt-4 w-full bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700 transition-colors"
+			>
+				← Zurück zum Kalender
+			</button>
 		</div>
 	{:else}
 		<div class="bg-white border border-gray-200 rounded-lg shadow-sm p-6 mb-6">
