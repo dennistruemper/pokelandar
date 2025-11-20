@@ -4,6 +4,7 @@ services:
   mongodb:
     image: mongo:7
     container_name: pokelandar-mongodb
+    hostname: mongodb
     restart: unless-stopped
     environment:
       MONGO_INITDB_ROOT_USERNAME: admin
@@ -22,6 +23,7 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: pokelandar-seed
+    hostname: seed
     restart: "no"
     depends_on:
       mongodb:
@@ -37,6 +39,7 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: pokelandar-app
+    hostname: app
     restart: unless-stopped
     depends_on:
       mongodb:
