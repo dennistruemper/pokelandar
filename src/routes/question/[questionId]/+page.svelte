@@ -69,15 +69,15 @@
 
 <div class="container mx-auto px-4 py-8">
 	<div class="mb-4">
-		<a href="/day/{question.day}" class="text-blue-600 hover:underline">← Back to day {question.day}</a>
+		<a href="/day/{question.day}" class="text-blue-600 hover:underline">← Zurück zu Tag {question.day}</a>
 	</div>
 
 	<h1 class="text-3xl font-bold mb-6">{question.question}</h1>
 
 	{#if isCorrect}
 		<div class="bg-green-50 border border-green-200 rounded-lg p-6 mb-6">
-			<p class="text-green-800 font-semibold text-lg mb-2">Correct! 🎉</p>
-			<p class="text-green-700">The answer is: <strong>{question.answer}</strong></p>
+			<p class="text-green-800 font-semibold text-lg mb-2">Richtig! 🎉</p>
+			<p class="text-green-700">Die Antwort ist: <strong>{question.answer}</strong></p>
 			{#if showReward}
 				<p class="text-green-600 mt-2 italic">{question.reward}</p>
 			{/if}
@@ -86,7 +86,7 @@
 		<div class="bg-white border border-gray-200 rounded-lg shadow-sm p-6 mb-6">
 			{#if revealedLetters.size > 0}
 				<div class="mb-4">
-					<p class="text-sm text-gray-600 mb-2">Hint:</p>
+					<p class="text-sm text-gray-600 mb-2">Hinweis:</p>
 					<p class="text-2xl font-mono tracking-wider text-gray-800">
 						{formatAnswerHint(question.answer, revealedLetters)}
 					</p>
@@ -96,14 +96,14 @@
 			<div class="space-y-4">
 				<div>
 					<label for="answer" class="block text-sm font-medium text-gray-700 mb-2">
-						Your Answer:
+						Deine Antwort:
 					</label>
 					<input
 						id="answer"
 						type="text"
 						bind:value={answerInput}
 						onkeypress={handleKeyPress}
-						placeholder="Enter your answer..."
+						placeholder="Gib deine Antwort ein..."
 						class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
 						autocomplete="off"
 					/>
@@ -114,15 +114,15 @@
 					disabled={!answerInput.trim()}
 					class="w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors"
 				>
-					Check Answer
+					Antwort prüfen
 				</button>
 
 				{#if wrongAttempts > 0}
 					<div class="text-sm text-gray-600">
-						<p>Wrong attempts: {wrongAttempts}</p>
+						<p>Falsche Versuche: {wrongAttempts}</p>
 						{#if wrongAttempts >= 3}
 							<p class="text-blue-600 mt-1">
-								💡 After every 3 wrong attempts, you'll get a letter hint!
+								💡 Nach jeweils 3 falschen Versuchen erhältst du einen Buchstaben-Hinweis!
 							</p>
 						{/if}
 					</div>

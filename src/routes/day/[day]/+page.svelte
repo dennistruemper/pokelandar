@@ -6,18 +6,18 @@
 	const day = Number(params.day);
 
 	if (isNaN(day) || day < 1 || day > 24) {
-		throw new Error('Invalid day');
+		throw new Error('Ungültiger Tag');
 	}
 
 	const questions = await getQuestionsForDay(day);
 </script>
 
 <div class="container mx-auto px-4 py-8">
-	<h1 class="text-3xl font-bold mb-6">Day {day}</h1>
+	<h1 class="text-3xl font-bold mb-6">Tag {day}</h1>
 
 	{#if questions.length === 0}
-		<p class="text-gray-600">No questions found for day {day}.</p>
-		<a href="/" class="text-blue-600 hover:underline">← Back to calendar</a>
+		<p class="text-gray-600">Keine Fragen für Tag {day} gefunden.</p>
+		<a href="/" class="text-blue-600 hover:underline">← Zurück zum Kalender</a>
 	{:else}
 		<div class="space-y-4 mb-6">
 			{#each questions as question (question._id)}
@@ -29,7 +29,7 @@
 				</a>
 			{/each}
 		</div>
-		<a href="/" class="text-blue-600 hover:underline">← Back to calendar</a>
+		<a href="/" class="text-blue-600 hover:underline">← Zurück zum Kalender</a>
 	{/if}
 </div>
 

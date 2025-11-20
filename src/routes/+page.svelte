@@ -28,7 +28,7 @@
 </script>
 
 <div class="container mx-auto px-4 py-8">
-	<h1 class="mb-8 text-center text-3xl font-bold">Advent Calendar</h1>
+	<h1 class="mb-8 text-center text-3xl font-bold">Adventskalender</h1>
 
 	<div class="grid grid-cols-4 gap-4 md:grid-cols-6 lg:grid-cols-8">
 		{#each Array(24) as _, i}

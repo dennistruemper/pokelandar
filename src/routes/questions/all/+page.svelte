@@ -23,16 +23,16 @@
 </script>
 
 <div class="container mx-auto px-4 py-8">
-	<h1 class="mb-6 text-3xl font-bold">All Questions</h1>
+	<h1 class="mb-6 text-3xl font-bold">Alle Fragen</h1>
 
 	{#if loading}
-		<p class="text-gray-600">Loading questions...</p>
+		<p class="text-gray-600">Fragen werden geladen...</p>
 	{:else if error}
 		<div class="mb-4 rounded border border-red-400 bg-red-100 px-4 py-3 text-red-700">
-			<p>Error: {error}</p>
+			<p>Fehler: {error}</p>
 		</div>
 	{:else if questions.length === 0}
-		<p class="text-gray-600">No questions found. Please seed the database first.</p>
+		<p class="text-gray-600">Keine Fragen gefunden. Bitte zuerst die Datenbank befüllen.</p>
 	{:else}
 		<div class="space-y-4">
 			{#each questions as question (question._id)}
@@ -41,7 +41,7 @@
 						<div class="flex items-center justify-between">
 							<span>{question.question}</span>
 							{#if question.day}
-								<span class="ml-4 text-sm font-normal text-gray-500">Day {question.day}</span>
+								<span class="ml-4 text-sm font-normal text-gray-500">Tag {question.day}</span>
 							{/if}
 						</div>
 					</summary>
@@ -49,16 +49,16 @@
 						<div class="space-y-3">
 							{#if question.day}
 								<div>
-									<p class="mb-1 text-sm font-semibold text-gray-700">Day:</p>
+									<p class="mb-1 text-sm font-semibold text-gray-700">Tag:</p>
 									<p class="text-gray-900">{question.day}</p>
 								</div>
 							{/if}
 							<div>
-								<p class="mb-1 text-sm font-semibold text-gray-700">Answer:</p>
+								<p class="mb-1 text-sm font-semibold text-gray-700">Antwort:</p>
 								<p class="text-gray-900">{question.answer}</p>
 							</div>
 							<div>
-								<p class="mb-1 text-sm font-semibold text-gray-700">Reward:</p>
+								<p class="mb-1 text-sm font-semibold text-gray-700">Belohnung:</p>
 								<p class="text-gray-900 italic">{question.reward}</p>
 							</div>
 						</div>
