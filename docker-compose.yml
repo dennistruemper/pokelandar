@@ -11,8 +11,6 @@ services:
       MONGO_INITDB_DATABASE: pokelandar
     volumes:
       - mongodb_data:/data/db
-    networks:
-      - pokelandar-network
     healthcheck:
       test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
       interval: 10s
@@ -33,8 +31,6 @@ services:
       MONGODB_DB_NAME: pokelandar
       NODE_ENV: production
     command: ["bun", "scripts/seed.ts"]
-    networks:
-      - pokelandar-network
 
   app:
     build:
@@ -53,13 +49,8 @@ services:
       NODE_ENV: production
       PORT: 3000
       HOST: 0.0.0.0
-    networks:
-      - pokelandar-network
 
 volumes:
   mongodb_data:
 
-networks:
-  pokelandar-network:
-    driver: bridge
 
