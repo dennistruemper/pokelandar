@@ -3,6 +3,9 @@ import { connectToDatabase } from '$lib/server/db';
 import type { Question } from '$lib/types/question';
 import { error } from '@sveltejs/kit';
 
+// Calendar start date: December 1, 2025
+const CALENDAR_START_DATE = new Date('2025-12-01T00:00:00Z');
+
 export const getDaysWithQuestions = query(async () => {
 	try {
 		const db = await connectToDatabase();
@@ -16,8 +19,14 @@ export const getDaysWithQuestions = query(async () => {
 
 		console.log(`Found ${questions.length} questions with days:`, daysWithQuestions);
 
-		// Calculate current day on the server
-		const currentDay = new Date().getDate();
+		// Check if calendar has started
+		const now = new Date();
+		let currentDay = 0; // Default to 0 (disabled) if before start date
+
+		if (now >= CALENDAR_START_DATE) {
+			// Only calculate current day if we're past the start date
+			currentDay = now.getDate();
+		}
 
 		return {
 			days: daysWithQuestions.sort((a, b) => a - b),
@@ -25,7 +34,8 @@ export const getDaysWithQuestions = query(async () => {
 		};
 	} catch (error) {
 		console.error('Error fetching days:', error);
-		const currentDay = new Date().getDate();
+		const now = new Date();
+		const currentDay = now >= CALENDAR_START_DATE ? now.getDate() : 0;
 		return {
 			days: [],
 			currentDay
