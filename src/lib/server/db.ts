@@ -1,12 +1,16 @@
-import { MongoClient, Db } from 'mongodb';
+import type { Db } from 'mongodb';
+import { MongoClient } from 'mongodb';
 
 // In Docker, use the service name 'mongodb', otherwise use 'localhost'
-const mongoHost = process.env.MONGODB_HOST || (process.env.NODE_ENV === 'production' ? 'mongodb' : 'localhost');
+const mongoHost =
+	process.env.MONGODB_HOST || (process.env.NODE_ENV === 'production' ? 'mongodb' : 'localhost');
 const mongoUser = process.env.MONGODB_USER || 'admin';
 const mongoPassword = process.env.MONGODB_PASSWORD || 'password';
 const mongoAuthSource = process.env.MONGODB_AUTH_SOURCE || 'admin';
 
-const uri = process.env.MONGODB_URI || `mongodb://${mongoUser}:${mongoPassword}@${mongoHost}:27017/pokelandar?authSource=${mongoAuthSource}`;
+const uri =
+	process.env.MONGODB_URI ||
+	`mongodb://${mongoUser}:${mongoPassword}@${mongoHost}:27017/pokelandar?authSource=${mongoAuthSource}`;
 const dbName = process.env.MONGODB_DB_NAME || 'pokelandar';
 
 let client: MongoClient | null = null;
@@ -33,4 +37,3 @@ export async function closeDatabase(): Promise<void> {
 		db = null;
 	}
 }
-

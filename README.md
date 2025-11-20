@@ -4,6 +4,7 @@ This is a SvelteKit + Bun project for managing quiz questions stored in MongoDB.
 It provides an admin-only view at `/questions/all` where each question shows its answer and motivational reward inside a `details` block.
 
 ## Tech Stack
+
 - SvelteKit 2 + Typescript
 - Bun runtime (dev + prod)
 - MongoDB (Dockerized)
@@ -42,13 +43,16 @@ It provides an admin-only view at `/questions/all` where each question shows its
 - In Docker, the `seed` service runs automatically and exits after success.
 
 ## API
+
 - `GET /api/questions` returns all questions as JSON.
 
 ## Admin UI
+
 - Navigate to `/questions/all`
 - Each card shows the question; expand to reveal answer + reward.
 
 ## Tests & Linting
+
 ```bash
 bun run test         # unit tests via Vitest
 bun run lint
@@ -56,6 +60,7 @@ bun run check        # type + svelte-check
 ```
 
 ## Environment Variables
+
 - `MONGODB_URI`, `MONGODB_DB_NAME`, etc. See `docker-compose.yml` for defaults.
 
 Feel free to extend this README with deployment notes or future features as the project evolves.

@@ -13,6 +13,25 @@ const sampleQuestions: SeedQuestion[] = [
 		question: 'Which is the largest animal?',
 		answer: 'Elephant',
 		reward: 'Great job!',
+		day: 1,
+		createdAt: new Date(),
+		updatedAt: new Date()
+	},
+	{
+		_id: 'advent-calendar-start',
+		question: 'On which date does Advent typically begin?',
+		answer: 'December 1st',
+		reward: 'Perfect start!',
+		day: 1,
+		createdAt: new Date(),
+		updatedAt: new Date()
+	},
+	{
+		_id: 'first-month',
+		question: 'What is the first month of the year?',
+		answer: 'January',
+		reward: 'Excellent!',
+		day: 1,
 		createdAt: new Date(),
 		updatedAt: new Date()
 	},
@@ -21,6 +40,7 @@ const sampleQuestions: SeedQuestion[] = [
 		question: 'What is the capital of France?',
 		answer: 'Paris',
 		reward: "Awesome, that's correct!",
+		day: 2,
 		createdAt: new Date(),
 		updatedAt: new Date()
 	},
@@ -29,6 +49,7 @@ const sampleQuestions: SeedQuestion[] = [
 		question: 'How many continents are there?',
 		answer: '7',
 		reward: 'Excellent work!',
+		day: 3,
 		createdAt: new Date(),
 		updatedAt: new Date()
 	},
@@ -37,6 +58,7 @@ const sampleQuestions: SeedQuestion[] = [
 		question: 'What is the smallest planet in our solar system?',
 		answer: 'Mercury',
 		reward: 'Well done!',
+		day: 4,
 		createdAt: new Date(),
 		updatedAt: new Date()
 	},
@@ -45,6 +67,7 @@ const sampleQuestions: SeedQuestion[] = [
 		question: 'What is 2 + 2?',
 		answer: '4',
 		reward: 'Perfect!',
+		day: 5,
 		createdAt: new Date(),
 		updatedAt: new Date()
 	},
@@ -53,6 +76,7 @@ const sampleQuestions: SeedQuestion[] = [
 		question: 'What is the largest ocean on Earth?',
 		answer: 'Pacific Ocean',
 		reward: 'Brilliant!',
+		day: 6,
 		createdAt: new Date(),
 		updatedAt: new Date()
 	},
@@ -61,6 +85,7 @@ const sampleQuestions: SeedQuestion[] = [
 		question: 'What is the tallest mountain in the world?',
 		answer: 'Mount Everest',
 		reward: 'Outstanding!',
+		day: 7,
 		createdAt: new Date(),
 		updatedAt: new Date()
 	},
@@ -69,6 +94,7 @@ const sampleQuestions: SeedQuestion[] = [
 		question: 'What is the longest river in the world?',
 		answer: 'Nile River',
 		reward: 'Fantastic!',
+		day: 8,
 		createdAt: new Date(),
 		updatedAt: new Date()
 	},
@@ -77,6 +103,7 @@ const sampleQuestions: SeedQuestion[] = [
 		question: 'Which planet is known as the Red Planet?',
 		answer: 'Mars',
 		reward: 'Amazing!',
+		day: 9,
 		createdAt: new Date(),
 		updatedAt: new Date()
 	},
@@ -85,6 +112,7 @@ const sampleQuestions: SeedQuestion[] = [
 		question: 'What is the chemical formula for water?',
 		answer: 'H2O',
 		reward: 'Superb!',
+		day: 10,
 		createdAt: new Date(),
 		updatedAt: new Date()
 	},
@@ -93,6 +121,7 @@ const sampleQuestions: SeedQuestion[] = [
 		question: 'What is the capital of Japan?',
 		answer: 'Tokyo',
 		reward: 'Wonderful!',
+		day: 11,
 		createdAt: new Date(),
 		updatedAt: new Date()
 	},
@@ -101,6 +130,7 @@ const sampleQuestions: SeedQuestion[] = [
 		question: 'What is the fastest land animal?',
 		answer: 'Cheetah',
 		reward: 'Incredible!',
+		day: 12,
 		createdAt: new Date(),
 		updatedAt: new Date()
 	},
@@ -109,6 +139,7 @@ const sampleQuestions: SeedQuestion[] = [
 		question: 'What is the largest desert in the world?',
 		answer: 'Antarctica',
 		reward: 'Excellent thinking!',
+		day: 13,
 		createdAt: new Date(),
 		updatedAt: new Date()
 	},
@@ -117,6 +148,7 @@ const sampleQuestions: SeedQuestion[] = [
 		question: 'What are the three primary colors?',
 		answer: 'Red, Blue, Yellow',
 		reward: 'Great knowledge!',
+		day: 14,
 		createdAt: new Date(),
 		updatedAt: new Date()
 	},
@@ -125,6 +157,7 @@ const sampleQuestions: SeedQuestion[] = [
 		question: 'What is the largest planet in our solar system?',
 		answer: 'Jupiter',
 		reward: 'Spectacular!',
+		day: 15,
 		createdAt: new Date(),
 		updatedAt: new Date()
 	},
@@ -133,6 +166,7 @@ const sampleQuestions: SeedQuestion[] = [
 		question: 'What is the capital of Australia?',
 		answer: 'Canberra',
 		reward: 'Well remembered!',
+		day: 16,
 		createdAt: new Date(),
 		updatedAt: new Date()
 	},
@@ -141,6 +175,7 @@ const sampleQuestions: SeedQuestion[] = [
 		question: 'How many bones does an adult human have?',
 		answer: '206',
 		reward: 'Impressive!',
+		day: 17,
 		createdAt: new Date(),
 		updatedAt: new Date()
 	},
@@ -149,6 +184,7 @@ const sampleQuestions: SeedQuestion[] = [
 		question: 'Which day has the most hours of daylight in the Northern Hemisphere?',
 		answer: 'June 21st (Summer Solstice)',
 		reward: 'Clever answer!',
+		day: 18,
 		createdAt: new Date(),
 		updatedAt: new Date()
 	},
@@ -157,6 +193,7 @@ const sampleQuestions: SeedQuestion[] = [
 		question: 'What is the largest mammal in the world?',
 		answer: 'Blue Whale',
 		reward: 'Marvelous!',
+		day: 19,
 		createdAt: new Date(),
 		updatedAt: new Date()
 	},
@@ -165,6 +202,7 @@ const sampleQuestions: SeedQuestion[] = [
 		question: 'What is the capital of Brazil?',
 		answer: 'Brasília',
 		reward: 'Terrific!',
+		day: 20,
 		createdAt: new Date(),
 		updatedAt: new Date()
 	},
@@ -173,6 +211,7 @@ const sampleQuestions: SeedQuestion[] = [
 		question: 'What is the speed of light in a vacuum?',
 		answer: '299,792,458 meters per second',
 		reward: 'Scientific genius!',
+		day: 21,
 		createdAt: new Date(),
 		updatedAt: new Date()
 	},
@@ -181,6 +220,7 @@ const sampleQuestions: SeedQuestion[] = [
 		question: 'What is the largest country by land area?',
 		answer: 'Russia',
 		reward: 'Geographic master!',
+		day: 22,
 		createdAt: new Date(),
 		updatedAt: new Date()
 	},
@@ -189,6 +229,7 @@ const sampleQuestions: SeedQuestion[] = [
 		question: 'What is the deepest point in the ocean?',
 		answer: 'Mariana Trench',
 		reward: 'Ocean expert!',
+		day: 23,
 		createdAt: new Date(),
 		updatedAt: new Date()
 	},
@@ -197,38 +238,7 @@ const sampleQuestions: SeedQuestion[] = [
 		question: 'What is the capital of Egypt?',
 		answer: 'Cairo',
 		reward: 'History buff!',
-		createdAt: new Date(),
-		updatedAt: new Date()
-	},
-	{
-		_id: 'freezing-point',
-		question: 'At what temperature does water freeze in Celsius?',
-		answer: '0 degrees',
-		reward: 'Perfect recall!',
-		createdAt: new Date(),
-		updatedAt: new Date()
-	},
-	{
-		_id: 'largest-lake',
-		question: 'What is the largest lake in the world?',
-		answer: 'Caspian Sea',
-		reward: 'Geography whiz!',
-		createdAt: new Date(),
-		updatedAt: new Date()
-	},
-	{
-		_id: 'capital-canada',
-		question: 'What is the capital of Canada?',
-		answer: 'Ottawa',
-		reward: 'North American expert!',
-		createdAt: new Date(),
-		updatedAt: new Date()
-	},
-	{
-		_id: 'planets-count',
-		question: 'How many planets are in our solar system?',
-		answer: '8',
-		reward: 'Astronomy star!',
+		day: 24,
 		createdAt: new Date(),
 		updatedAt: new Date()
 	}
@@ -253,6 +263,7 @@ async function seed() {
 						question: question.question,
 						answer: question.answer,
 						reward: question.reward,
+						day: question.day,
 						updatedAt: now
 					},
 					$setOnInsert: {
