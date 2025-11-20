@@ -1,3 +1,24 @@
 @import 'tailwindcss';
 @plugin '@tailwindcss/forms';
 @plugin '@tailwindcss/typography';
+
+/* Pokémon GB font - Game Boy style font from Pokémon games */
+@font-face {
+	font-family: 'Pokemon';
+	src: url('/fonts/PokemonGB.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+:root {
+	/* Fallback to Press Start 2P if Pokémon font is not available */
+	--font-pokemon: 'Pokemon', 'Press Start 2P', monospace;
+}
+
+h1 {
+	font-family: var(--font-pokemon);
+	letter-spacing: 0.05em;
+	/* Make it look more like Pokémon game font */
+	text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.1);
+}
